@@ -1,0 +1,48 @@
+* About
+My personal [[https://github.com/hlissner/doom-emacs][doom emacs]] config files. Used to develop and org.
+
+Below the instruction to recreate my complete environment.
+* Dependecies
+After a successful installation of =emacs= and =doom emacs= in order to get everything to work some packages have to be installed/configured.
+** OS packges
+Install the following packages with your packet manager:
+#+begin_quote
+python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug
+#+end_quote
+** npm packages
+Install [[https://nodejs.org/][node.js]]
+#+begin_src sh :dir /sudo::
+npm -g i <package>
+#+end_src
+#+begin_quote
+intelephense dockerfile-language-server-nodejs
+#+end_quote
+** PHP
+*** LSP - Intelephense
+Create a licence.txt file in =~/intelephense/licence.txt= with your licence key (optional)
+*** Tools
+- install [[https://github.com/stephpy/vim-php-cs-fixer][php-cs-fixer]]
+  #+begin_src sh :dir
+wget https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
+chmod +x php-cs-fixer
+sudo mv php-cs-fixer /usr/local/bin
+  #+end_src
+- install [[https://github.com/phpactor/phpactor][phpactor]]
+  #+begin_src sh :dir
+git clone git@github.com:phpactor/phpactor
+sudo ln -s /path/to/phpactor/bin/phpactor /usr/local/bin/phpactor
+  #+end_src
+*** Debugger
+Confirm xdebug (>= 3 version), use the following configuration
+#+begin_src ini
+zend_extension=xdebug.so
+xdebug.mode=debug
+xdebug.client_port=9003
+xdebug.log=/tmp/xdebug.log
+#+end_src
+Cannot find usable debugger inside emacs, for now use [[https://github.com/robertbasic/pugdebug][pugdebug]] as a standalone xdebug client
+#+begin_src sh
+pip install fuzzywuzzy
+pip installa pugdebug
+#+end_src
+then launch the app.py app.
