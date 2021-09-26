@@ -81,3 +81,4 @@
 (setq auto-save-default t
       make-backup-files t)
 (setq confirm-kill-emacs nil)
+(setq projectile-project-search-path '("~/work/"))

@@ -47,3 +47,6 @@ pip install fuzzywuzzy
 pip installa pugdebug
 #+end_src
 then launch the app.py app.
+
+* Notes
+- =~/work= is the project dir used by [[https://github.com/bbatsov/projectile][projectile]] by using =projectile-discover-projects-in-search-path= ( SPC p D )
