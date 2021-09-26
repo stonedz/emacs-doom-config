@@ -14,6 +14,7 @@ Install [[https://nodejs.org/][node.js]]
 #+begin_src sh :dir /sudo::
 npm -g i <package>
 #+end_src
+Then install the following packages
 #+begin_quote
 intelephense dockerfile-language-server-nodejs
 #+end_quote
