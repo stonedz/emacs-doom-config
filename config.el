@@ -78,7 +78,13 @@
 ;;                                    ("xdebug" "xdebug/*.el")))
 ;; :config (setq realgud:xdebug-command-name
 ;;                "~/Downloads/dbgpClient"))
+
+;; Enable auto saving and backups
 (setq auto-save-default t
       make-backup-files t)
+
+;; Do not ask for quit confirmation
 (setq confirm-kill-emacs nil)
+
+;; Sets the directory in which projectile searches for projects
 (setq projectile-project-search-path '("~/work/"))
