@@ -7,7 +7,7 @@ After a successful installation of =emacs= and =doom emacs= in order to get ever
 ** OS packges
 Install the following packages with your packet manager:
 #+begin_quote
-python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug
+python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell
 #+end_quote
 ** npm packages
 Install [[https://nodejs.org/][node.js]]

@@ -35,7 +35,8 @@
 (setq org-pretty-entities t
       org-hide-emphasis-markers t
       org-startup-indented t
-      org-startup-with-inline-images t)
+      org-startup-with-inline-images t
+      org-return-follows-link t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -88,3 +89,12 @@
 
 ;; Sets the directory in which projectile searches for projects
 (setq projectile-project-search-path '("~/work/"))
+
+;; org-roam capture templates
+(setq org-roam-capture-templates '(("d" "default" plain "%?"
+                                    :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                                                       "#+title: ${title}\n")
+                                    :unnarrowed t)))
+;; org-roam dailies templates
+(setq org-roam-dailies-capture-templates '(("d" "default" entry "* [%<%Y-%m-%d %H:%M>] %?"
+                                            :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
