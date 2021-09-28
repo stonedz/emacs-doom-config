@@ -5,10 +5,14 @@ Below the instruction to recreate my complete environment.
 * Dependecies
 After a successful installation of =emacs= and =doom emacs= in order to get everything to work some packages have to be installed/configured.
 ** OS packges
-Install the following packages with your packet manager:
-#+begin_quote
-python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell
-#+end_quote
+Install the following packages with your packet manager My system is Arch based but names should be clear enough
+#+begin_src sh :dir /sudo::
+pacman -S python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell
+#+end_src
+And in AUR
+#+begin_src sh :dir /sudo::
+yay -S mu mbsync-git
+#+end_src
 ** npm packages
 Install [[https://nodejs.org/][node.js]]
 #+begin_src sh :dir /sudo::
@@ -47,6 +51,28 @@ pip install fuzzywuzzy
 pip installa pugdebug
 #+end_src
 then launch the app.py app.
+
+** Mu4e
+I use =mbsync= to sync mail with my gmail account, for the configuration I followed [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][this]] and [[https://www.ict4g.net/adolfo/notes/emacs/reading-imap-mail-with-emacs.html][this]] instructions.
+
+#+begin_src sh
+mkdir ~/Mail-gmail
+#+end_src
+
+Create the =~/.mbsyncrc= configuration file. [[https://github.com/stonedz/my-dotfiles/blob/master/.mbsyncrc][My .mbsyncrc file]].
+Then run this to download the emails locally and update mu's index. =mbsync -a= could take a while to finish if you have a lot of emails.
+#+begin_src sh
+mbsync -a
+mu init --maildir=/home/stonedz/Mail-gmail --my-address=<your email here>
+mu index
+#+end_src
+
+In order to send emails without entering the password each time add this to your =~/.authinfo.gpg=
+#+begin_src
+machine smtp.gmail.com login <your email here> password <your password here> port 587
+#+end_src
+Note that if you use two factor authentication on gmail, you cannot use your gmail password but you need
+to create an [[https://support.google.com/mail/answer/185833?hl=en-GB][app password]] and use that instead.
 
 * Notes
 - =~/work= is the project dir used by [[https://github.com/bbatsov/projectile][projectile]] by using =projectile-discover-projects-in-search-path= ( SPC p D )

@@ -99,3 +99,23 @@
 ;; org-roam dailies templates
 (setq org-roam-dailies-capture-templates '(("d" "default" entry "* [%<%Y-%m-%d %H:%M>] %?"
                                             :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+
+;; mu4a and mail config
+(setq
+        message-send-mail-function 'smtpmail-send-it
+        smtpmail-smtp-server "smtp.gmail.com"
+        smtpmail-default-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-service 587
+        smtpmail-stream-type  'starttls)
+
+(setq mu4e-compose-format-flowed t)
+(setq mu4e-compose-signature "Paolo")
+
+;; This is set to 't' to avoid mail syncing issues when using mbsync
+(setq mu4e-change-filenames-when-moving t)
+
+;; Refresh mail using isync every 8 minutes
+(after! mu4e
+(setq mu4e-update-interval 480)
+(setq mu4e-get-mail-command "mbsync -a")
+)
