@@ -22,6 +22,7 @@ Then install the following packages
 #+begin_quote
 intelephense dockerfile-language-server-nodejs
 #+end_quote
+* Instructions
 ** PHP
 *** LSP - Intelephense
 Create a licence.txt file in =~/intelephense/licence.txt= with your licence key (optional)
@@ -74,5 +75,19 @@ machine smtp.gmail.com login <your email here> password <your password here> por
 Note that if you use two factor authentication on gmail, you cannot use your gmail password but you need
 to create an [[https://support.google.com/mail/answer/185833?hl=en-GB][app password]] and use that instead.
 
+** Syncthing
+I use [[https://syncthing.net/][Syncthing]] to sync my org files to my other devices.
+#+begin_src sh
+pacman -S syncthing
+#+end_src
+
+To enable syncthing to start automatically for a specified user
+#+begin_src sh
+mv /usr/lib/systemd/system/syncthing\@.service /usr/lib/systemd/system/syncthing\@<user>.service
+systemctl start syncthing\@<user>.service
+systemctl enable syncthing\@<user>.service
+#+end_src
+
+You can now access [[http://127.0.0.1:8384]] to access syncthing configuration interface.
 * Notes
 - =~/work= is the project dir used by [[https://github.com/bbatsov/projectile][projectile]] by using =projectile-discover-projects-in-search-path= ( SPC p D )
