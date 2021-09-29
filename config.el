@@ -116,7 +116,7 @@
 
 ;; Refresh mail using isync every 8 minutes
 (after! mu4e
-(setq mu4e-update-interval 480)
-(setq mu4e-get-mail-command "mbsync -a")
-(setq mu4e-maildir "~/Mail-gmail")
-)
+  (setq mu4e-update-interval 480)
+  (setq mu4e-get-mail-command "mbsync -a")
+  (setq mu4e-maildir "~/Mail-gmail")
+  )
