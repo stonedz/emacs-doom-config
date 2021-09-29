@@ -7,11 +7,11 @@ After a successful installation of =emacs= and =doom emacs= in order to get ever
 ** OS packges
 Install the following packages with your packet manager My system is Arch based but names should be clear enough
 #+begin_src sh :dir /sudo::
-pacman -S python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell
+pacman -S python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell ccls
 #+end_src
 And in AUR
 #+begin_src sh :dir /sudo::
-yay -S mu mbsync-git
+yay -S mu mbsync-git rtags
 #+end_src
 ** npm packages
 Install [[https://nodejs.org/][node.js]]
@@ -20,7 +20,7 @@ npm -g i <package>
 #+end_src
 Then install the following packages
 #+begin_quote
-intelephense dockerfile-language-server-nodejs
+intelephense dockerfile-language-server-nodejs stylelint js-beautify
 #+end_quote
 * Instructions
 ** PHP
