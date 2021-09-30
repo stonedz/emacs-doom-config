@@ -52,6 +52,7 @@ pip install fuzzywuzzy
 pip installa pugdebug
 #+end_src
 then launch the app.py app.
+** C/C++
 
 ** Mu4e
 I use =mbsync= to sync mail with my gmail account, for the configuration I followed [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][this]] and [[https://www.ict4g.net/adolfo/notes/emacs/reading-imap-mail-with-emacs.html][this]] instructions.
@@ -77,6 +78,7 @@ to create an [[https://support.google.com/mail/answer/185833?hl=en-GB][app passw
 
 ** Syncthing
 I use [[https://syncthing.net/][Syncthing]] to sync my org files to my other devices.
+
 #+begin_src sh
 pacman -S syncthing
 #+end_src

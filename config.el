@@ -132,3 +132,9 @@
   (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-maildir "~/Mail-gmail")
   )
+
+;; Everything in org please
+(use-package! org-pandoc-import :after org)
+
+;; org-tree-slide for presentations
+(setq org-image-actual-width nil)
