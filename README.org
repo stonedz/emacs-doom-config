@@ -28,7 +28,7 @@ intelephense dockerfile-language-server-nodejs stylelint js-beautify
 Create a licence.txt file in =~/intelephense/licence.txt= with your licence key (optional)
 *** Tools
 - install [[https://github.com/stephpy/vim-php-cs-fixer][php-cs-fixer]]
-  #+begin_src sh :dir
+  #+begin_src sh :dir00
 wget https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
 chmod +x php-cs-fixer
 sudo mv php-cs-fixer /usr/local/bin
@@ -46,13 +46,21 @@ xdebug.mode=debug
 xdebug.client_port=9003
 xdebug.log=/tmp/xdebug.log
 #+end_src
-Cannot find usable debugger inside emacs, for now use [[https://github.com/robertbasic/pugdebug][pugdebug]] as a standalone xdebug client
-#+begin_src sh
-pip install fuzzywuzzy
-pip installa pugdebug
-#+end_src
-then launch the app.py app.
+
+*** Debugging client
+Using [[https://emacs-lsp.github.io/dap-mode/][DAP Mode]] for php debugging. Once enabled a =dap-php-setup= command is available. This command should download [[https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug][felixfbecker vscode package]] but it did not work for me
+
+Steps in order to make it work:
+- download the =felixfbecker.php-debug-1.19.0.vsix= package from the vscode marketplace page by clicking on =Download Extension=
+- the vsix package is a zip file, extract it wherever you please and move the =extension= folder as such:
+ #+begin_src sh
+mv extension ~/.emacs.d/.local/etc/dap-extension/vscode/felixfbecker.php-debug
+ #+end_src
+ it may be necessary to execute =dap-php-setup= at least onece in order to create the correct directories.
+- Now you should be able to =dap-debug= your code
+
 ** C/C++
+*** TODO write this
 
 ** Mu4e
 I use =mbsync= to sync mail with my gmail account, for the configuration I followed [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][this]] and [[https://www.ict4g.net/adolfo/notes/emacs/reading-imap-mail-with-emacs.html][this]] instructions.

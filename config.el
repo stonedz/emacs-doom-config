@@ -138,3 +138,6 @@
 
 ;; org-tree-slide for presentations
 (setq org-image-actual-width nil)
+
+;; hugo exports
+(setq org-hugo-base-dir "~/hugo/braindump")
