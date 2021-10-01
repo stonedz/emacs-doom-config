@@ -2,42 +2,39 @@
 My personal [[https://github.com/hlissner/doom-emacs][doom emacs]] config files. Used to develop and org.
 
 Below the instruction to recreate my complete environment.
+
 * Dependecies
 After a successful installation of =emacs= and =doom emacs= in order to get everything to work some packages have to be installed/configured.
 ** OS packges
 Install the following packages with your packet manager My system is Arch based but names should be clear enough
-#+begin_src sh :dir /sudo::
+#+begin_src sh :dir "/sudo::"
 pacman -S python3 python-pip git curl silversearcher-ag ripgrep fd pandoc tidy clojure-lsp-bin xdebug ispell ccls
 #+end_src
 And in AUR
-#+begin_src sh :dir /sudo::
+#+begin_src sh :dir "/sudo::"
 yay -S mu mbsync-git rtags
 #+end_src
 ** npm packages
 Install [[https://nodejs.org/][node.js]]
-#+begin_src sh :dir /sudo::
-npm -g i <package>
+#+begin_src sh :dir "/sudo::"
+npm -g i intelephense dockerfile-language-server-nodejs stylelint js-beautify
 #+end_src
-Then install the following packages
-#+begin_quote
-intelephense dockerfile-language-server-nodejs stylelint js-beautify
-#+end_quote
 * Instructions
 ** PHP
 *** LSP - Intelephense
 Create a licence.txt file in =~/intelephense/licence.txt= with your licence key (optional)
 *** Tools
 - install [[https://github.com/stephpy/vim-php-cs-fixer][php-cs-fixer]]
-  #+begin_src sh :dir00
+#+begin_src sh :dir "sudo::"
 wget https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
 chmod +x php-cs-fixer
-sudo mv php-cs-fixer /usr/local/bin
-  #+end_src
+mv php-cs-fixer /usr/local/bin
+#+end_src
 - install [[https://github.com/phpactor/phpactor][phpactor]]
-  #+begin_src sh :dir
+#+begin_src sh :dir ~/work
 git clone git@github.com:phpactor/phpactor
 sudo ln -s /path/to/phpactor/bin/phpactor /usr/local/bin/phpactor
-  #+end_src
+#+end_src
 *** Debugger
 Confirm xdebug (>= 3 version), use the following configuration
 #+begin_src ini
@@ -73,7 +70,7 @@ Create the =~/.mbsyncrc= configuration file. [[https://github.com/stonedz/my-dot
 Then run this to download the emails locally and update mu's index. =mbsync -a= could take a while to finish if you have a lot of emails.
 #+begin_src sh
 mbsync -a
-mu init --maildir=/home/stonedz/Mail-gmail --my-address=<your email here>
+mu init --maildir=~/Mail-gmail --my-address=paolo.fagni@gmail.com
 mu index
 #+end_src
 
@@ -92,7 +89,7 @@ pacman -S syncthing
 #+end_src
 
 To enable syncthing to start automatically for a specified user
-#+begin_src sh
+#+begin_src sh :dir "sudo::"
 mv /usr/lib/systemd/system/syncthing\@.service /usr/lib/systemd/system/syncthing\@<user>.service
 systemctl start syncthing\@<user>.service
 systemctl enable syncthing\@<user>.service
