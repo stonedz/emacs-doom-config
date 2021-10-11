@@ -142,6 +142,7 @@
 ;; hugo exports
 (setq org-hugo-base-dir "~/hugo/braindump")
 
+; roam-ui
 (use-package! websocket
     :after org-roam)
 
@@ -156,3 +157,10 @@
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
+
+(after! org-noter
+  (setq org-noter-default-notes-file-names (cons "notes.org" org-noter-default-notes-file-names)))
+
+;lsp is watching my home and all the files.
+;TODO fix that in another way
+(setq lsp-enable-file-watchers nil)

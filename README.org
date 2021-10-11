@@ -59,6 +59,12 @@ mv extension ~/.emacs.d/.local/etc/dap-extension/vscode/felixfbecker.php-debug
 ** C/C++
 *** TODO write this
 
+** Haskell
+Install the following packages:
+#+begin_src sh :dir "sudo::"
+pacman -S ghc ghc-static haskell-language-server
+#+end_src
+
 ** Mu4e
 I use =mbsync= to sync mail with my gmail account, for the configuration I followed [[https://github.com/daviwil/emacs-from-scratch/blob/629aec3dbdffe99e2c361ffd10bd6727555a3bd3/show-notes/Emacs-Mail-01.org][this]] and [[https://www.ict4g.net/adolfo/notes/emacs/reading-imap-mail-with-emacs.html][this]] instructions.
 

@@ -13,7 +13,10 @@
 ;; https://github.com/raxod502/straight.el#the-recipe-format
 ;(package! another-package
 ;  :recipe (:host github :repo "username/repo"))
-;
+; map-into bug see https://github.com/clojure-emacs/cider/issues/3029
+;; (package! cider :pin "8b3dabe")
+(package! map :pin "bb50dba")
+
 (package! org-pandoc-import
   :recipe (:host github
            :repo "tecosaur/org-pandoc-import"
